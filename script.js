@@ -1,14 +1,16 @@
 let input = document.getElementById('text');
 let buttons = document.querySelectorAll('button');
+let sound = document.getElementById('sound')
 
 let string = "";
 let arr = Array.from(buttons);
 arr.forEach(button =>{
     button.addEventListener('click', (e) =>{
+        sound.play();
         if(e.target.innerHTML == '='){
             string = eval(string);
             input.value = string;
-            // document.querySelector('input').value = string;
+        
         }
         else if(e.target.innerHTML == 'AC'){
             string = "";
@@ -25,3 +27,4 @@ arr.forEach(button =>{
         }
     })
 })
+
